@@ -1,2 +1,10 @@
 test
+<<<<<<< HEAD
 branch yeon
+=======
+<<<<<<< HEAD
+수정
+=======
+branch yeon
+>>>>>>> c41e397f64ad9b22f7c800a818b6786c86d99944
+>>>>>>> 461e7708d6eae79ea90bbbaf9d7c81b87f70a130
