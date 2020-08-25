@@ -1,6 +1,36 @@
-test
-<<<<<<< HEAD
-수정
-=======
-branch yeon
->>>>>>> c41e397f64ad9b22f7c800a818b6786c86d99944
+--연결
+git init
+git add test.txt
+git commit -m "first commit"
+git remote add origin https://github.com/yeony22/Practice_2.git
+git push -u origin master
+
+--branch 설정
+git branch yeon
+git checkout yeon
+git add test.txt
+git commit -m "branch 확인"
+git checkout master
+git merge yeon
+git checkout yeon
+git push --set-upstream origin yeon
+git push
+
+--master branch push (현재 yeon)
+git add .
+git commit -m "완료"
+git checkout master
+git merge yeon
+git push origin master
+
+--master branch pull
+git checkout master
+git pull origin master
+git checkout yeon
+git merge master
+
+--git ignore 설정
+vim .gitignore
+git add .
+git commit -m "ignore"
+git push
