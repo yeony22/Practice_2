@@ -1,0 +1,63 @@
+[33mcommit cff589c8cc76563e374d7f0474dcf72b3d724782[m[33m ([m[1;36mHEAD -> [m[1;32myeon[m[33m, [m[1;32mmaster[m[33m)[m
+Reflog: HEAD@{0} (YeonGyeongLee <37134357+yeony22@users.noreply.github.com>)
+Reflog message: reset: moving to HEAD^
+Author: YeonGyeongLee <37134357+yeony22@users.noreply.github.com>
+Date:   Tue Aug 25 11:18:12 2020 +0900
+
+    branch 확인
+
+[33mcommit ac9e5a17c322e9afb892ce249b6fcb537973902a[m[33m ([m[1;31morigin/yeon[m[33m)[m
+Reflog: HEAD@{1} (YeonGyeongLee <37134357+yeony22@users.noreply.github.com>)
+Reflog message: commit: branch 확인
+Author: YeonGyeongLee <37134357+yeony22@users.noreply.github.com>
+Date:   Tue Aug 25 11:26:19 2020 +0900
+
+    branch 확인
+
+[33mcommit cff589c8cc76563e374d7f0474dcf72b3d724782[m[33m ([m[1;36mHEAD -> [m[1;32myeon[m[33m, [m[1;32mmaster[m[33m)[m
+Reflog: HEAD@{2} (YeonGyeongLee <37134357+yeony22@users.noreply.github.com>)
+Reflog message: checkout: moving from master to yeon
+Author: YeonGyeongLee <37134357+yeony22@users.noreply.github.com>
+Date:   Tue Aug 25 11:18:12 2020 +0900
+
+    branch 확인
+
+[33mcommit cff589c8cc76563e374d7f0474dcf72b3d724782[m[33m ([m[1;36mHEAD -> [m[1;32myeon[m[33m, [m[1;32mmaster[m[33m)[m
+Reflog: HEAD@{3} (YeonGyeongLee <37134357+yeony22@users.noreply.github.com>)
+Reflog message: merge yeon: Fast-forward
+Author: YeonGyeongLee <37134357+yeony22@users.noreply.github.com>
+Date:   Tue Aug 25 11:18:12 2020 +0900
+
+    branch 확인
+
+[33mcommit 987dd016fca3bbe9849cbc5f350452caa605e0a7[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mhyuna[m[33m)[m
+Reflog: HEAD@{4} (YeonGyeongLee <37134357+yeony22@users.noreply.github.com>)
+Reflog message: checkout: moving from yeon to master
+Author: YeonGyeongLee <37134357+yeony22@users.noreply.github.com>
+Date:   Tue Aug 25 11:14:27 2020 +0900
+
+    first commit
+
+[33mcommit cff589c8cc76563e374d7f0474dcf72b3d724782[m[33m ([m[1;36mHEAD -> [m[1;32myeon[m[33m, [m[1;32mmaster[m[33m)[m
+Reflog: HEAD@{5} (YeonGyeongLee <37134357+yeony22@users.noreply.github.com>)
+Reflog message: commit: branch 확인
+Author: YeonGyeongLee <37134357+yeony22@users.noreply.github.com>
+Date:   Tue Aug 25 11:18:12 2020 +0900
+
+    branch 확인
+
+[33mcommit 987dd016fca3bbe9849cbc5f350452caa605e0a7[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mhyuna[m[33m)[m
+Reflog: HEAD@{6} (YeonGyeongLee <37134357+yeony22@users.noreply.github.com>)
+Reflog message: checkout: moving from master to yeon
+Author: YeonGyeongLee <37134357+yeony22@users.noreply.github.com>
+Date:   Tue Aug 25 11:14:27 2020 +0900
+
+    first commit
+
+[33mcommit 987dd016fca3bbe9849cbc5f350452caa605e0a7[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mhyuna[m[33m)[m
+Reflog: HEAD@{7} (YeonGyeongLee <37134357+yeony22@users.noreply.github.com>)
+Reflog message: commit (initial): first commit
+Author: YeonGyeongLee <37134357+yeony22@users.noreply.github.com>
+Date:   Tue Aug 25 11:14:27 2020 +0900
+
+    first commit
