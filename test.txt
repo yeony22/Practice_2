@@ -16,14 +16,14 @@ git checkout yeon
 git push --set-upstream origin yeon
 git push
 
---master branch 업로드 (현재 브랜치는 yeon)
+--master branch push (현재 yeon)
 git add .
-git commit -m "기능 구현 완료"
+git commit -m "완료"
 git checkout master
 git merge yeon
 git push origin master
 
---pull
+--master branch pull
 git checkout master
 git pull origin master
 git checkout yeon
