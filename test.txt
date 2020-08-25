@@ -26,8 +26,6 @@ git push origin master
 --pull
 git checkout master
 git pull origin master
-
---반영
 git checkout yeon
 git merge master
 
