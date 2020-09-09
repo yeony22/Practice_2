@@ -23,7 +23,7 @@ public class ScoreInsert extends HttpServlet {
     public ScoreInsert() {
         super();
     }
-
+    // ¡÷ºÆ
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -33,7 +33,7 @@ public class ScoreInsert extends HttpServlet {
 		int korean = Integer.parseInt(request.getParameter("korean"));
 		int engilsh = Integer.parseInt(request.getParameter("english"));
 		int math = Integer.parseInt(request.getParameter("math"));
-		
+				
 		StudentService sService = new StudentService();
 		StudentDTO sDTO = new StudentDTO();
 		
