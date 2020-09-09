@@ -45,7 +45,9 @@ public class StudentDAO {
 			pstmt.setString(3, sDTO.getName());
 			pstmt.setString(4, sDTO.getPhone());
 			
-			result = pstmt.executeUpdate();
+			result = pstmt.executeUpdate(); 
+			
+			// INSERT, DELETE, UPDATE 반영된 레코드의 건수를 반환(int) / CREATE, DROP -1 을 반환
 			
 		} catch(SQLException e) {
 			e.printStackTrace();
