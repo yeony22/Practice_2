@@ -1,6 +1,7 @@
 package com.service;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 
 import com.dao.StudentDAO;
 import com.dto.StudentDTO;
@@ -26,6 +27,20 @@ public class StudentService {
 			
 		}
 		return result;
+	}
+	
+	public ArrayList<StudentDTO> selectStudentList() {
+		Connection con = getConnection();
+		
+		ArrayList<StudentDTO> list = sDAO.selectStudentList(con);
+		
+		try {
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+		
 	}
 
 }

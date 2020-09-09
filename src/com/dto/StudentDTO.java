@@ -10,7 +10,7 @@ public class StudentDTO implements Serializable{
 	private String phone;
 	private String exam;
 	private int korean;
-	private int engilsh;
+	private int english;
 	private int math;
 	private double avg;
 	
@@ -18,17 +18,36 @@ public class StudentDTO implements Serializable{
 		super();
 	}
 	
-	public StudentDTO(int id, int grade, int room, String name, String phone, String exam, int korean, int english, int math, double avg) {
+	public StudentDTO(int id, int grade, int room, String name, String phone,
+			String exam, int korean, int english, int math, double avg) {
 		super();
 		this.id = id;
 		this.grade = grade;
 		this.room = room;
+		this.name = name;
 		this.phone = phone;
 		this.exam = exam;
 		this.korean = korean;
-		this.engilsh = english;
+		this.english = english;
 		this.math = math;
 		this.avg = avg;
+	}
+	
+	public StudentDTO(int id, int grade, int room, String name, String phone) {
+		super();
+		this.id = id;
+		this.grade = grade;
+		this.room = room;
+		this.name = name;
+		this.phone = phone;
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", grade=" + grade + ", room=" + room + ", name=" + name
+				+ ", phone=" + phone + ", exam=" + exam + ", korean=" + korean + ", english=" + english + ", math="
+				+ math + "]";
 	}
 	
 	public int getId() {
@@ -73,11 +92,11 @@ public class StudentDTO implements Serializable{
 	public void setKorean(int korean) {
 		this.korean = korean;
 	}
-	public int getEngilsh() {
-		return engilsh;
+	public int getEnglish() {
+		return english;
 	}
 	public void setEngilsh(int engilsh) {
-		this.engilsh = engilsh;
+		this.english = english;
 	}
 	public int getMath() {
 		return math;

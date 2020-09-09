@@ -8,67 +8,55 @@ import java.sql.Statement;
 
 public class JDBCTemplate {
 	public static Connection getConnection() {
-
-		Connection conn = null; // DB 연동할 객체 생성
-
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver"); // 해당 클래스가 메모리에 로드 및 실행
-
-		} catch (ClassNotFoundException e) {
-			System.out.println("ClassNotFoundException: " + e.getMessage());
-		}
-
-		try { // drive 클래스를 이용해 커넥션 객체에 localhost:3306/practice1 과 연동 및 예외처리
-			String url = "jdbc:mysql://localhost:3306/student_data?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
-			conn = DriverManager.getConnection(url, "root", "Weak"); // DB 로그인 정보로 연동
-			conn.setAutoCommit(false); // commit 수동 설정
-
-		} catch (SQLException e) {
-			System.out.println("SQLException: " + e.getMessage());
-			System.out.println("SQLState: " + e.getSQLState());
-			System.out.println("VendorError: " + e.getErrorCode());
-		}
-
-		
-//		try {
-//			conn.close();
-//
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-
-		return conn;
+		Connection conn = null;
+	
+	
+	try {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+	} catch (ClassNotFoundException e) {
+		System.out.println("ClassNotFoundException:" + e.getMessage());
+		System.out.println("드라이버 로딩 실패");
+	} 
+	
+	try {
+		String url="jdbc:mysql://localhost:3306/practice3?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
+		conn = DriverManager.getConnection(url, "conn", "Weak");
+		conn.setAutoCommit(false);
+	} catch (SQLException e) {
+		System.out.println("SQL 예외  : " + e.getMessage());
+		System.out.println("SQL state : " + e.getSQLState());
+		System.out.println("vendor 에러 : " + e.getErrorCode());
 	}
-
-	// 오버로딩 기술 적용!
+	return conn;
+}
+	
 	public static void close(Connection con) {
 		try {
-			if (con != null && !con.isClosed())
+			if(con != null && !con.isClosed())
 				con.close();
-		} catch (SQLException e) {
+		} catch(SQLException e) {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public static void close(Statement stmt) {
 		try {
-			if (stmt != null && !stmt.isClosed())
+			if(stmt != null && !stmt.isClosed())
 				stmt.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public static void close(ResultSet rset) {
 		try {
-			if (rset != null && !rset.isClosed())
+			if(rset != null && !rset.isClosed()) 
 				rset.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-
-	public static void commit(Connection con) {
+	public static void commit (Connection con) {
 		try {
 			if (con != null && !con.isClosed())
 				con.commit();
@@ -76,7 +64,6 @@ public class JDBCTemplate {
 			e.printStackTrace();
 		}
 	}
-
 	public static void rollback(Connection con) {
 		try {
 			if (con != null && !con.isClosed())

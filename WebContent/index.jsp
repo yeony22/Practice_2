@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>쇼핑몰 회원 관리</title>
+<title>성적관리 프로그램</title>
 </head>
 <body>
-	<a href="views/insertMember.jsp">회원등록</a>
-	<a href="">회원 목록 조회/수정</a>
-	<a href="">회원 매출 조회</a>
-	<a href="index.jsp">홈으로..</a>
+ <jsp:include page="views/common/header.jsp"/>
+ <jsp:include page="views/common/nav.jsp"/>
+ <h1>학생 성적 관리 프로그램</h1>
+ <jsp:include page="views/common/footer.jsp"/>
 </body>
 </html>
