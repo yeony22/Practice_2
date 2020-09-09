@@ -23,7 +23,7 @@ public class ScoreInsert extends HttpServlet {
     public ScoreInsert() {
         super();
     }
-    // 주석_update
+    // 주석_update_pushTest
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
