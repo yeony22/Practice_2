@@ -20,7 +20,7 @@ public class JDBCTemplate {
 	
 	try {
 		String url="jdbc:mysql://localhost:3306/practice3?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false";
-		conn = DriverManager.getConnection(url, "conn", "Weak");
+		conn = DriverManager.getConnection(url, "root", "Weak");
 		conn.setAutoCommit(false);
 	} catch (SQLException e) {
 		System.out.println("SQL ¿¹¿Ü  : " + e.getMessage());

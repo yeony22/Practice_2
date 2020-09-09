@@ -12,9 +12,8 @@
 <title>성적관리 프로그램</title>
 </head>
 <body>
-<!-- 	<header>
-	</header>
-	 -->
+	<jsp:include page="../common/header.jsp"/>
+	<jsp:include page="../common/nav.jsp"/>
 <%-- <form 
     action="<%=request.getContextPath()%>/studentList.do"  method="post"
   > --%>
@@ -27,15 +26,15 @@
 	 		<th>학생명</th>
 	 		<th>전화번호</th>
 	 	</tr>
-	 	<% for (StudentDTO s : list) { %>
+	 	<% for (StudentDTO sDTO : list) { %>
 	 	<tr>
 	 		<td>
-	 		<%=s.getId() %>
+	 		<a href="${pageContext.request.contextPath}/studentSelectOne.do?id=<%=sDTO.getId() %>"><%= sDTO.getId() %></a>
 	 		</td>
-	 		<td><%= s.getGrade() %></td>
-	 		<td><%= s.getRoom() %></td>
-	 		<td><%= s.getName() %></td>
-	 		<td><%= s.getPhone() %></td>
+	 		<td><%= sDTO.getGrade() %></td>
+	 		<td><%= sDTO.getRoom() %></td>
+	 		<td><%= sDTO.getName() %></td>
+	 		<td><%= sDTO.getPhone() %></td>
 	 	</tr>
 	 	<% } %>
 	 </table>

@@ -102,4 +102,72 @@ public class StudentDAO {
 		return list;
 	}
 
+	public StudentDTO selectStudentOne(Connection con, int id) {
+
+		StudentDTO sDTO = null;
+		PreparedStatement pstmt = null; // sql실행
+		ResultSet rs = null; // select결과 처리
+		
+		String sql = "SELECT * FROM STUDENT WHERE ID = ?";	
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			
+			rs = pstmt.executeQuery(); // 실행 결과를 담아줌
+			
+			while (rs.next()) {
+				sDTO = new StudentDTO();
+				
+				sDTO.setId(rs.getInt("ID"));
+				sDTO.setGrade(rs.getInt("GRADE"));
+				sDTO.setRoom(rs.getInt("ROOM"));
+				sDTO.setName(rs.getString("NAME"));
+				sDTO.setPhone(rs.getString("PHONE"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				pstmt.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return sDTO; // student 반환
+	}
+
+	public int updateStudent(Connection con, StudentDTO sDTO) {
+		// TODO Auto-generated method stub
+		int result = 0; // 초기화
+		PreparedStatement pstmt = null;
+		
+		String sql = "UPDATE STUDENT SET GRADE = ?, ROOM = ?, NAME = ? , PHONE = ? WHERE ID = ?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, sDTO.getGrade());
+			pstmt.setInt(2, sDTO.getRoom());
+			pstmt.setString(3, sDTO.getName());
+			pstmt.setString(4, sDTO.getPhone());
+			pstmt.setInt(5, sDTO.getId());
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		} finally {
+			try {
+				pstmt.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+				// TODO: handle exception
+			}
+		}
+		
+		return result;
+	}
+
 }
