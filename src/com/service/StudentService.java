@@ -31,37 +31,52 @@ public class StudentService {
 	
 	public ArrayList<StudentDTO> selectStudentList() {
 		Connection con = getConnection();
-		
 		ArrayList<StudentDTO> list = sDAO.selectStudentList(con);
 		
 		try {
 			con.close();
-		} catch (Exception e) {
+			
+		} catch(Exception e) {
 			e.printStackTrace();
+			
 		}
 		return list;
-		
 	}
-
+	
 	public StudentDTO selectStudentOne(int id) {
-
 		Connection con = getConnection();
-		
-		 StudentDTO sDTO  = sDAO.selectStudentOne(con, id);
+		StudentDTO sDTO = sDAO.selectStudentOne(con, id);
 		
 		try {
 			con.close();
-		} catch (Exception e) {
+			
+		} catch(Exception e) {
 			e.printStackTrace();
+			
 		}
 		return sDTO;
 	}
-
+	
 	public int updateStudent(StudentDTO sDTO) {
-		// TODO Auto-generated method stub
 		Connection con = getConnection();
-		
 		int result = sDAO.updateStudent(con, sDTO);
+		
+		try {
+			if(result > 0)
+				con.commit();
+			else
+				con.rollback();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		return result;
+	}
+	
+	public int insertScore(StudentDTO sDTO) {
+		Connection con = getConnection();
+		int result = sDAO.insertScore(con, sDTO);
 		
 		try {
 			if(result > 0)
