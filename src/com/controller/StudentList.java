@@ -37,7 +37,8 @@ public class StudentList extends HttpServlet {
 			
 		request.setAttribute("list", list);
 		
-		request.getRequestDispatcher("views/student/studentList.jsp").forward(request, response);
+		request.getRequestDispatcher("views/student/studentList.jsp").forward(request, response); // redirect는 response로 값만 보내고 
+		// 값을 보낼 때는 requestDispatcher를 사용해서 .forward(request, response) 서버측 내용을 공유
 		
 	}
 
