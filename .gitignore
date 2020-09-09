@@ -1,4 +1,4 @@
 .classpath
 .project
-/build/
+/build
 src/com/common/JDBCTemplate.java
