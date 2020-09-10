@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList, com.dto.*" %>
+<%
+	ArrayList<StudentDTO> list = (ArrayList<StudentDTO>)request.getAttribute("list");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,9 +16,16 @@
 	<h1>학생 성적 등록</h1>
 	<form action="${pageContext.request.contextPath}/insertScore.do" method="post">
 		<table border="1">
+			<%-- 번호 db에서 불러오기 --%>
 			<tr>
-				<td>번호 :</td>
-				<td><input type="text" name="id"/></td>
+				<td>번호 :</td> 
+				<td>
+					<select>
+						<% for (StudentDTO sDTO : list) { %>
+						<option><%= sDTO.getId() %></option>
+						<% } %>
+					</select>
+				</td>
 			</tr>
 			<tr>
 				<td>시험명 :</td>

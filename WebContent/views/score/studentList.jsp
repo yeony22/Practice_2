@@ -38,7 +38,13 @@
 	 	</tr>
 	 	<% } %>
 	 </table>
-
 	<jsp:include page="../common/footer.jsp"/>
+	 	 <select>
+	 <% for (StudentDTO sDTO : list) { %>
+	 	
+	 		<option><%= sDTO.getId() %></option>
+	 	
+	 <% } %>
+	 </select>
 </body>
 </html>

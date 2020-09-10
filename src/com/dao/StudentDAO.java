@@ -45,9 +45,7 @@ public class StudentDAO {
 			pstmt.setString(3, sDTO.getName());
 			pstmt.setString(4, sDTO.getPhone());
 			
-			result = pstmt.executeUpdate(); 
-			
-			// INSERT, DELETE, UPDATE 반영된 레코드의 건수를 반환(int) / CREATE, DROP -1 을 반환
+			result = pstmt.executeUpdate();
 			
 		} catch(SQLException e) {
 			e.printStackTrace();
@@ -194,5 +192,40 @@ public class StudentDAO {
 			}
 		}
 		return result;
+	}
+	
+	public ArrayList<StudentDTO> selectId(Connection con) {
+		ArrayList<StudentDTO> list = new ArrayList();
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		String sql = prop.getProperty("selectId");
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			rset = pstmt.executeQuery();
+			
+			while(rset.next()) {
+				StudentDTO sDTO = new StudentDTO();
+				
+				sDTO.setId(rset.getInt("id"));
+				
+				list.add(sDTO);
+			}
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+			
+		} finally {
+			try {
+				rset.close();
+				pstmt.close();
+				
+			} catch(Exception e) {
+				e.printStackTrace();
+			
+			}
+		}
+		return list;
 	}
 }

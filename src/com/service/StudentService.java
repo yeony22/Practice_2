@@ -90,5 +90,19 @@ public class StudentService {
 		}
 		return result;
 	}
+	
+	public ArrayList<StudentDTO> selectId() {
+		Connection con = getConnection();
+		ArrayList<StudentDTO> list = sDAO.selectStudentList(con);
+		
+		try {
+			con.close();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		return list;
+	}
 
 }
