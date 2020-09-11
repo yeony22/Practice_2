@@ -19,9 +19,9 @@
 			<tr>
 				<td>번호 :</td>
 				<td>
-					<select>
+					<select name="id">
 						<% for (StudentDTO sDTO : list) { %>
-						<option><%= sDTO.getId() %></option>
+						<option value="<%= sDTO.getId() %>"><%= sDTO.getId() %></option>
 						<% } %>
 					</select>
 				</td>
