@@ -16,9 +16,8 @@
 	<h1>학생 성적 등록</h1>
 	<form action="${pageContext.request.contextPath}/insertScore.do" method="post">
 		<table border="1">
-			<%-- 번호 db에서 불러오기 --%>
 			<tr>
-				<td>번호 :</td> 
+				<td>번호 :</td>
 				<td>
 					<select>
 						<% for (StudentDTO sDTO : list) { %>
