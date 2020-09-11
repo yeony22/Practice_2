@@ -228,4 +228,43 @@ public class StudentDAO {
 		}
 		return list;
 	}
+
+	public ArrayList<StudentDTO> selectScoreList(Connection con) {
+		ArrayList<StudentDTO> list = new ArrayList<>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql = prop.getProperty("selectScore");
+				
+				try {
+					pstmt = con.prepareStatement(sql);
+					rs = pstmt.executeQuery();
+					
+					while(rs.next()) {
+						StudentDTO sDTO = new StudentDTO();
+						
+						sDTO.setId(rs.getInt("id"));
+						sDTO.setGrade(rs.getInt("grade"));
+						sDTO.setRoom(rs.getInt("room"));
+						sDTO.setName(rs.getString("name"));
+						sDTO.setAvg(rs.getDouble("avg"));// doubleÇüÀ¸·Î Æò±Õ°ªÀ» °¡Á®¿È
+						
+						list.add(sDTO);
+					}
+					
+				} catch(SQLException e) {
+					e.printStackTrace();
+					
+				} finally {
+					try {
+						rs.close();
+						pstmt.close();
+						
+					} catch(Exception e) {
+						e.printStackTrace();
+					
+					}
+				}
+				return list;
+				}
 }

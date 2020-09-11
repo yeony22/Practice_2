@@ -24,27 +24,26 @@
 	 		<th>학년</th>
 	 		<th>반</th>
 	 		<th>학생명</th>
-	 		<th>전화번호</th>
+	 		<th>평균</th>
 	 	</tr>
 	 	<% for (StudentDTO sDTO : list) { %>
 	 	<tr>
-	 		<td>
-	 		<a href="${pageContext.request.contextPath}/studentSelectOne.do?id=<%=sDTO.getId() %>"><%= sDTO.getId() %></a>
+	 		<td><%= sDTO.getId() %>
 	 		</td>
 	 		<td><%= sDTO.getGrade() %></td>
 	 		<td><%= sDTO.getRoom() %></td>
 	 		<td><%= sDTO.getName() %></td>
-	 		<td><%= sDTO.getPhone() %></td>
+	 		<td><%= sDTO.getAvg() %></td>
 	 	</tr>
 	 	<% } %>
 	 </table>
 	<jsp:include page="../common/footer.jsp"/>
-	 	 <select>
+	 	<%--  <select>
 	 <% for (StudentDTO sDTO : list) { %>
 	 	
 	 		<option><%= sDTO.getId() %></option>
 	 	
 	 <% } %>
-	 </select>
+	 </select> --%>
 </body>
 </html>

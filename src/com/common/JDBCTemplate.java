@@ -21,7 +21,7 @@ public class JDBCTemplate {
 		}
 		try {
 			String url = "jdbc:mysql://localhost:3306/practice3?characterEndoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false";
-			con = DriverManager.getConnection(url, "root", "1234");
+			con = DriverManager.getConnection(url, "root", "Weak");
 			con.setAutoCommit(false);
 			
 		} catch(SQLException e) {

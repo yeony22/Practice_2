@@ -105,4 +105,19 @@ public class StudentService {
 		return list;
 	}
 
+	public ArrayList<StudentDTO> selectScoreList() {
+		Connection con = getConnection();
+		
+		ArrayList<StudentDTO> list = sDAO.selectScoreList(con);
+		
+		try {
+			con.close();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		return list;
+		}
+
 }
